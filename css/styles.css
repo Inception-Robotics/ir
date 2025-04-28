@@ -632,8 +632,8 @@ h1 {
 
 .video-scroll-image {
   width: 100vw;
-  height: 45vh;
-  object-fit: contain;
+  height: 100vh;
+  object-fit: cover;
   object-position: center;
   border-radius: 0;
   margin-bottom: 1.5vw;
@@ -729,7 +729,7 @@ h1 {
   width: 16%;
   /* This should be updated dynamically with JS for active step */
   height: 6px;
-  background: #2563eb;
+  background: #111827;
   border-radius: 3px;
   transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1), width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1363,7 +1363,7 @@ h1 {
   width: 16%;
   /* This should be updated dynamically with JS for active step */
   height: 6px;
-  background: #2563eb;
+  background: #111827;
   border-radius: 3px;
   transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1), width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1387,7 +1387,8 @@ h1 {
   }
 
   .video-scroll-image {
-    height: 30vh;
+    height: 100vh;
+    object-fit: cover;
   }
 
   .video-scroll-subtitle {

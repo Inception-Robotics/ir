@@ -71,18 +71,18 @@
                             <img src="images/medsort.png" alt="Medsort" class="video-scroll-image" />
                             <div class="scroll-below-text"
                                 style="margin-top: 2vh; display: flex; flex-direction: column; align-items: center;">
-                                <span
-                                    style="display: inline-block; margin-top: 0.6em; box-shadow: 0 4px 16px 0 rgba(0,0,0,0.18); border-radius: 50%; background: white; padding: 0.4em 0.6em;">
+                                <button id="scroll-below-btn"
+                                    style="display: flex; align-items: center; gap: 0.5em; background: none; border: none; cursor: pointer; box-shadow: 0 4px 16px 0 rgba(0,0,0,0.18); border-radius: 50px; padding: 0.4em 1em;">
+                                    <span style="font-size: 1.1em; font-weight: 500; color: #222;">Scroll below</span>
                                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="black"
                                         stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-                                        style="display:block;">
+                                        style="display:block; transform: rotate(30deg);">
                                         <path d="M12 5v14M19 12l-7 7-7-7" />
                                     </svg>
-                                </span>
+                                </button>
                             </div>
                         </div>
-                        <video id="bgVideo" class="video-scroll" preload="auto" muted playsinline
-                            webkit-playsinline="true">
+                        <video id="bgVideo" class="video-scroll" preload="auto" muted playsinline autoplay webkit-playsinline="true">
                             <source src="medsort.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -259,6 +259,19 @@
         video.addEventListener('error', (e) => {
             console.error("Video error:", e);
         });
+
+        // Add scroll-below click handler
+        const scrollBtn = document.getElementById('scroll-below-btn');
+        if (scrollBtn) {
+            scrollBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Scroll to the video section so it's at the top of the viewport
+                const wrapper = document.querySelector('.video-scroll-wrapper');
+                if (wrapper) {
+                    wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        }
     });
 
     // Add bounce animation for scroll nudge and smooth overlay transitions
