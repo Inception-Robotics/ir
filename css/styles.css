@@ -678,7 +678,6 @@ h1 {
   position: relative;
 }
 
-
 .text-heading {
   opacity: 0;
   transform: translateY(24px);
@@ -769,6 +768,11 @@ h1 {
 
   .text-heading {
     font-size: 0.95rem;
+  }
+
+  .video-scroll-steps .text-heading:first-child,
+  .video-scroll-steps .text-heading:last-child {
+    color: white;
   }
 }
 
@@ -1405,4 +1409,11 @@ h1 {
   .text-heading {
     font-size: 0.95rem;
   }
+
+  @media (max-width: 900px) {
+  .video-scroll-steps .text-heading[data-start-time="0"],
+  .video-scroll-steps .text-heading[data-start-time="51"] {
+    color: white;
+  }
+}
 }
