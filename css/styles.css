@@ -646,7 +646,7 @@ h1 {
   max-width: none;
   box-shadow: none;
   border-radius: 0;
-  background: #000;
+  background: #ffffff;
 }
 
 .video-scroll-overlay {
@@ -1236,7 +1236,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
+  background: white;~
   overflow: hidden;
 }
 
@@ -1300,9 +1300,8 @@ h1 {
   max-width: none;
   box-shadow: none;
   border-radius: 0;
-  background: #000;
+  background: #fff;
 }
-
 .video-scroll-overlay {
   position: absolute;
   top: 0;
@@ -1417,3 +1416,4 @@ h1 {
   }
 }
 }
+
