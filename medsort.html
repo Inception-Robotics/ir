@@ -87,25 +87,15 @@
                             Your browser does not support the video tag.
                         </video>
                         <div class="video-scroll-overlay content">
-                            <div class="video-scroll-steps">
-                                <div class="text-heading" data-start-time="0" data-end-time="3">Unsorted Items</div>
-                                <div class="text-heading" data-start-time="3" data-end-time="8">Load bin</div>
-                                <div class="text-heading" style="color: white;" data-start-time="8" data-end-time="15">
-                                    Start Medsort</div>
-                                <div class="text-heading" data-start-time="15" data-end-time="22">Sort Medicines</div>
-
-                                <div class="text-heading" data-start-time="22" data-end-time="28">Pick a medicine</div>
-                                <div class="text-heading" style="color: white;" data-start-time="28" data-end-time="37">
-                                    Scan details</div>
-                                <div class="text-heading" style="color: white;" data-start-time="37" data-end-time="43">
-                                    Place in sorted bin</div>
-                                <div class="text-heading" data-start-time="43" data-end-time="51">Sorted Items</div>
-                                <div class="text-heading" data-start-time="51" data-end-time="59">Report</div>
-                                <div class="video-scroll-stepbar">
-                                    <div class="video-scroll-stepbar-track"></div>
-                                    <div class="video-scroll-stepbar-thumb"></div>
-                                </div>
-                            </div>
+                            <div class="text-heading" data-start-time="0" data-end-time="3">Unsorted Items</div>
+                            <div class="text-heading" data-start-time="3" data-end-time="8">Load bin</div>
+                            <div class="text-heading" data-start-time="8" data-end-time="15">Start Medsort</div>
+                            <div class="text-heading" data-start-time="15" data-end-time="22">Sort Medicines</div>
+                            <div class="text-heading" data-start-time="22" data-end-time="28">Pick a medicine</div>
+                            <div class="text-heading" data-start-time="28" data-end-time="39">Scan details</div>
+                            <div class="text-heading" data-start-time="39" data-end-time="43">Place in sorted bin</div>
+                            <div class="text-heading" data-start-time="43" data-end-time="51">Sorted Items</div>
+                            <div class="text-heading" data-start-time="51" data-end-time="59">Report</div>
                         </div>
                     </div>
                 </section>
@@ -171,27 +161,6 @@
         let videoDuration = 0;
         let isVideoReady = false;
 
-        const stepbarThumb = document.querySelector('.video-scroll-stepbar-thumb');
-        const stepbarTrack = document.querySelector('.video-scroll-stepbar-track');
-        const steps = Array.from(document.querySelectorAll('.video-scroll-steps .text-heading'));
-
-        function updateStepbar(targetTime) {
-            if (!steps.length || !stepbarThumb || !stepbarTrack || !videoDuration) return;
-            // Find active step
-            let activeIdx = 0;
-            steps.forEach((step, idx) => {
-                const start = parseFloat(step.dataset.startTime);
-                const end = parseFloat(step.dataset.endTime);
-                if (targetTime >= start && targetTime <= end) {
-                    activeIdx = idx;
-                }
-            });
-            // Calculate thumb width and position
-            const stepCount = steps.length;
-            const percent = ((activeIdx + 1) / stepCount) * 100;
-            stepbarThumb.style.width = percent + '%';
-        }
-
         function setScrollHeight() {
             if (videoDuration > 0) {
                 document.querySelector('.video-scroll-wrapper').style.height = `${Math.max(100 * videoDuration, window.innerHeight)}px`;
@@ -218,7 +187,6 @@
                         heading.classList.remove('visible');
                     }
                 });
-                updateStepbar(targetTime);
                 // Hide overlay as soon as user scrolls (targetTime > 0.01)
                 if (imgOverlay) {
                     if (targetTime > 0.001) {
@@ -232,7 +200,6 @@
             } else if (rect.top > 0) {
                 video.currentTime = 0;
                 textHeadings.forEach(h => h.classList.remove('visible'));
-                updateStepbar(0);
                 if (imgOverlay) {
                     imgOverlay.style.opacity = 1;
                     imgOverlay.style.pointerEvents = 'auto';
@@ -240,7 +207,6 @@
             } else if (rect.bottom <= windowHeight) {
                 video.currentTime = videoDuration;
                 textHeadings.forEach(h => h.classList.remove('visible'));
-                updateStepbar(videoDuration);
                 if (imgOverlay) {
                     imgOverlay.style.opacity = 0;
                     imgOverlay.style.pointerEvents = 'none';
