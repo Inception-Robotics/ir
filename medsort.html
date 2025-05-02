@@ -29,10 +29,10 @@
                 <div class="container">
                     <div class="flex-center space-y-8">
                         <div class="space-y-4 max-w-3xl">
-                            <h1>Medsort</h1>
+                            <h1>MedSort</h1>
+                            <h3>Medicine returns handling. Reimagined.</h3>
                             <p class="subtitle">
-                                Cost-effective, portable device that automates expiry detection, medicine
-                                identification, sorting, and inventory reporting for returned pharmacy supplies.
+                                Smart, Compact, and Affordable. MedSort is a robot designed to sort messy bins of returned medical supplies — from blister packs to vials to syringes. MedSort's got you covered.
                             </p>
                         </div>
 
@@ -87,15 +87,16 @@
                             Your browser does not support the video tag.
                         </video>
                         <div class="video-scroll-overlay content">
-                            <div class="text-heading" data-start-time="0" data-end-time="3">Unsorted Items</div>
-                            <div class="text-heading" data-start-time="3" data-end-time="8">Load bin</div>
-                            <div class="text-heading" data-start-time="8" data-end-time="15">Start Medsort</div>
-                            <div class="text-heading" data-start-time="15" data-end-time="22">Sort Medicines</div>
-                            <div class="text-heading" data-start-time="22" data-end-time="28">Pick a medicine</div>
-                            <div class="text-heading" data-start-time="28" data-end-time="39">Scan details</div>
-                            <div class="text-heading" data-start-time="39" data-end-time="43">Place in sorted bin</div>
-                            <div class="text-heading" data-start-time="43" data-end-time="51">Sorted Items</div>
-                            <div class="text-heading" data-start-time="51" data-end-time="59">Report</div>
+                            <div class="text-heading" data-start-time="0" data-end-time="3">Unsorted tote of medical supplies.</div>
+                            <div class="text-heading" data-start-time="3" data-end-time="5">Load tote into Medsort.</div>
+                            <div class="text-heading" data-start-time="5" data-end-time="8">MedSort's sorted bins.</div>
+                            <div class="text-heading" data-start-time="8" data-end-time="15">Start Medsort through the touchscreen interface.</div>
+                            <div class="text-heading" data-start-time="15" data-end-time="22">MedSort starts sorting!</div>
+                            <div class="text-heading" data-start-time="25" data-end-time="28">Robotic gripper picks medicines.</div>
+                            <div class="text-heading-white" data-start-time="35" data-end-time="37.5">MedSort reads the medicine's label...</div>
+                            <div class="text-heading-white" data-start-time="39" data-end-time="43">... and groups it with other medicines of the same kind.</div>
+                            <div class="text-heading" data-start-time="47" data-end-time="52">MedSort continues until all medicines are sorted.</div>
+                            <div class="text-heading" data-start-time="53" data-end-time="59">Get a report of the sorted medicines and their counts.</div>
                         </div>
                     </div>
                 </section>
@@ -156,7 +157,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const video = document.getElementById('bgVideo');
-        const textHeadings = document.querySelectorAll('.video-scroll-overlay .text-heading');
+        const textHeadings = document.querySelectorAll('.video-scroll-overlay .text-heading, .video-scroll-overlay .text-heading-white');
         const imgOverlay = document.getElementById('video-scroll-image-overlay');
         let videoDuration = 0;
         let isVideoReady = false;
