@@ -1289,6 +1289,10 @@ h1 {
   .text-heading {
     font-size: 1.5rem;
   }
+
+  .text-heading-white {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 700px) {
@@ -1304,6 +1308,21 @@ h1 {
   }
 
   .text-heading.visible {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .text-heading-white {
+    position: fixed;
+    left: 50%;
+    top: auto;
+    bottom: 5vh;
+    transform: translateX(-50%) translateY(24px);
+    text-align: center;
+    font-size: 1.25rem;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .text-heading-white.visible {
     transform: translateX(-50%) translateY(0);
   }
 }
