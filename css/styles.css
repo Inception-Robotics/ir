@@ -1230,63 +1230,78 @@ h1 {
   pointer-events: auto;
 } */
 
-.text-heading {
-  opacity: 0; /* Keep text opaque */
-  transform: translateY(24px);
-  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-  pointer-events: none;
-  position: fixed;
-  right: 3vw;
-  top: 2vh;
-  text-align: left;
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  color: #111827; /* Keep text color opaque */
-  line-height: 1.5;
-  margin-bottom: 0.7em;
-  background: rgba(224, 224, 227, 0.0); /* Set background with lower opacity */
-  padding: 1rem 1.5rem;
-  border-radius: 0.5rem;
-  box-shadow: none;
-}
-
-.text-heading.visible {
-  opacity: 1; /* Text stays fully opaque */
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
+.text-heading,
 .text-heading-white {
-  opacity: 0; /* Keep text opaque */
+  opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
   position: fixed;
-  right: 3vw;
-  top: 2vh;
-  text-align: left;
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  color: #edeff3; /* Keep text color opaque */
-  line-height: 1.5;
-  margin-bottom: 0.7em;
-  background: rgba(224, 224, 227, 0.0); /* Set background with lower opacity */
+  left: 50%;
+  bottom: 8vh;
+  transform: translateX(-50%) translateY(24px);
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.4;
   padding: 1rem 1.5rem;
-  border-radius: 0.5rem;
-  box-shadow: none;
+  max-width: 90vw;
+  width: max-content; /* Use as much width as needed for content */
+  max-width: 90vw;   /* But don't exceed 90% of viewport width */
+  white-space: nowrap; /* Try to keep text on single line when possible */
+  overflow-wrap: break-word; /* Allow breaking at arbitrary points if needed */
+  word-break: keep-all;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  z-index: 20;
 }
 
+/* Add this media query for mobile responsiveness */
+@media (max-width: 768px) {
+  .text-heading,
+  .text-heading-white {
+    white-space: normal; /* Allow wrapping on mobile */
+    font-size: 1.5rem;  /* Slightly smaller font on mobile */
+  }
+}
+
+
+.text-heading.visible,
 .text-heading-white.visible {
-  opacity: 1; /* Text stays fully opaque */
-  transform: translateY(0);
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
   pointer-events: auto;
 }
+
+
+#video-progress-bar-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+#video-progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #3b82f6; /* Tailwind blue-500, change to fit your theme */
+    transition: width 0.1s linear;
+}
+
+
 
 
 @media (max-width: 900px) {
   .text-heading {
+    font-size: 1.5rem;
+  }
+
+  .text-heading-white {
     font-size: 1.5rem;
   }
 }
@@ -1304,6 +1319,21 @@ h1 {
   }
 
   .text-heading.visible {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .text-heading-white {
+    position: fixed;
+    left: 50%;
+    top: auto;
+    bottom: 5vh;
+    transform: translateX(-50%) translateY(24px);
+    text-align: center;
+    font-size: 1.25rem;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .text-heading-white.visible {
     transform: translateX(-50%) translateY(0);
   }
 }
