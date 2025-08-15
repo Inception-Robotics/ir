@@ -1338,3 +1338,95 @@ h1 {
   }
 }
 
+/* FAQ */
+.faq-section {
+  width: 100%;
+  padding: 48px 0;
+  background-color: #f9fafb;
+}
+
+@media (min-width: 768px) {
+  .faq-section { padding: 96px 0; }
+}
+
+.dark-theme .faq-section { background-color: #111827; }
+
+.faq-heading {
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #111827;
+}
+
+.dark-theme .faq-heading { color: #f9fafb; }
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.faq-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  background: #fff;
+  overflow: hidden;
+}
+
+.dark-theme .faq-item {
+  border-color: #374151;
+  background: #1f2937;
+}
+
+.faq-item > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  position: relative;
+}
+
+.dark-theme .faq-item > summary { color: #f9fafb; }
+
+/* Remove default triangle and add custom chevron */
+.faq-item > summary::-webkit-details-marker { display: none; }
+.faq-item > summary::after {
+  content: '';
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-50%) rotate(-45deg);
+  transition: transform 0.2s ease;
+  opacity: 0.7;
+}
+
+.faq-item[open] > summary::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.faq-answer {
+  padding: 0 1.25rem 1rem 1.25rem;
+  color: #4b5563;
+}
+
+.dark-theme .faq-answer { color: #9ca3af; }
+
+/* Hover / focus states */
+.faq-item > summary:hover { background: #f9fafb; }
+.dark-theme .faq-item > summary:hover { background: #111827; }
+
+.faq-item > summary:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 0.75rem;
+}
+
+
