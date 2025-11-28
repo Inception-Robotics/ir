@@ -5,8 +5,20 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-blue: #0b4f9c;
+  --primary-blue-dark: #093f7d;
+  --accent-gold: #f5a524;
+  --text-dark: #0f172a;
+  --muted-text: #6b7280;
+  --light-surface: #f8fafc;
+  --border-color: #dbeafe;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: var(--text-dark);
+  background-color: var(--light-surface);
 }
 
 /* Layout classes */
@@ -34,7 +46,9 @@ body {
 
 /* Navbar styles */
 header {
-  border-bottom: 1px solid #e5e7eb;
+  /* border-bottom: 1px solid #e5e7eb; */
+  border-bottom: 3px solid var(--accent-gold);
+  background-color: white;
 }
 
 header.dark {
@@ -56,28 +70,36 @@ header.dark {
 }
 
 .logo img {
-  height: 32px;
+  height: 40px;
   width: auto;
 }
 
-.light-theme .logo img {
+/* .light-theme .logo img {
   filter: invert(1);
-}
+} */
 
 nav {
   display: flex;
   gap: 24px;
 }
 
-nav a {
+/* nav a {
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
   color: black;
   text-underline-offset: 4px;
+} */
+nav a {
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--primary-blue);
+  text-underline-offset: 6px;
 }
 
 nav a:hover {
+  color: var(--accent-gold);
   text-decoration: underline;
 }
 
@@ -125,7 +147,7 @@ h1 {
 
 .subtitle {
   max-width: 700px;
-  color: #6b7280;
+  color: var(--muted-text);
   margin: 0 auto;
   font-size: 12px;
 }
@@ -175,18 +197,13 @@ h1 {
 }
 
 .button-primary {
-  background-color: black;
+  background-color: var(--primary-blue);
   color: white;
   border: none;
 }
 
 .button-primary:hover {
-  background-color: #1f2937;
-}
-
-.dark-theme .button-primary {
-  background-color: white;
-  color: black;
+  background-color: var(--primary-blue-dark);
 }
 
 .dark-theme .button-primary:hover {
@@ -195,18 +212,12 @@ h1 {
 
 .button-outline {
   background-color: white;
-  color: black;
-  border: 2px solid black;
+  color: var(--primary-blue);
+  border: 2px solid var(--primary-blue);
 }
 
 .button-outline:hover {
-  background-color: #f3f4f6;
-}
-
-.dark-theme .button-outline {
-  background-color: black;
-  color: white;
-  border: 2px solid white;
+  background-color: #e0edff;
 }
 
 .dark-theme .button-outline:hover {
@@ -214,9 +225,7 @@ h1 {
 }
 
 .button-secondary {
-  background-color: black;
-  color: white;
-  border: 1px solid black;
+  background-color: #d18a11;
 }
 
 .button-secondary:hover {
@@ -1028,7 +1037,7 @@ h1 {
 .team-section {
   width: 100%;
   padding: 3rem 0;
-  background-color: #f9fafb;
+  background-color: #eef2ff;
 }
 
 @media (min-width: 768px) {
@@ -1046,12 +1055,6 @@ h1 {
 @media (min-width: 640px) {
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .team-grid {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -1082,11 +1085,11 @@ h1 {
 .member-name {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--text-dark);
 }
 
 .member-title {
-  color: #6b7280;
+  color: var(--muted-text);
 }
 
 .linkedin-link {
