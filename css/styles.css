@@ -327,7 +327,24 @@ h1 {
 /* Backed By Logos */
 .logos-section {
   width: 100%;
-  padding: 48px 0;
+  padding: 24px 0;
+  background-color: #f0f4f8;
+}
+
+.logos-section .space-y-6>*+* {
+  margin-top: 8px;
+}
+
+.logos-section p {
+  color: #374151;
+}
+
+.dark-theme .logos-section {
+  background-color: #1f2937;
+}
+
+.dark-theme .logos-section p {
+  color: #f9fafb;
 }
 
 .text-sm {
@@ -347,14 +364,11 @@ h1 {
 }
 
 .text-gray-400 {
-  color: #9ca3af;
+  color: #6b7280;
 }
 
-.logos-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 32px;
+.dark-theme .text-gray-400 {
+  color: #9ca3af;
 }
 
 @media (min-width: 768px) {
@@ -368,12 +382,30 @@ h1 {
   height: 48px;
   align-items: center;
   justify-content: center;
-  opacity: 0.6;
+  opacity: 1;
   transition: opacity 0.2s ease-in-out;
+}
+
+.dark-theme .logo-box {
+  background-color: transparent;
 }
 
 .logo-box:hover {
   opacity: 1;
+}
+
+.logos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 12px 24px;
+}
+
+.dark-theme .logos-grid {
+  background-color: #374151;
 }
 
 .logo-content {
@@ -413,7 +445,7 @@ h1 {
   font-weight: 700;
   margin-bottom: 1rem;
   letter-spacing: -0.025em;
-  color: #f9fafb;
+  color: var(--text-dark);
 }
 
 @media (min-width: 640px) {
@@ -425,7 +457,7 @@ h1 {
 .section-header p {
   max-width: 700px;
   margin: 0 auto;
-  color: #9ca3af;
+  color: var(--muted-text);
 }
 
 @media (min-width: 768px) {
@@ -476,10 +508,18 @@ h1 {
 .card-content h3 {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #f9fafb;
+  color: var(--text-dark);
 }
 
 .card-content p {
+  color: var(--muted-text);
+}
+
+.dark-theme .card-content h3 {
+  color: #f9fafb;
+}
+
+.dark-theme .card-content p {
   color: #9ca3af;
 }
 
@@ -564,6 +604,14 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.feature-content h3 {
+  color: var(--text-dark);
+}
+
+.feature-content p {
+  color: var(--muted-text);
 }
 
 .text-xl {
@@ -1126,7 +1174,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;~
+  background: white;
   overflow: hidden;
 }
 
